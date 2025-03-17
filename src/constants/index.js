@@ -3,26 +3,38 @@ import {
     backend,
     creator,
     web,
-    javascript,
-    typescript,
-    html,
-    css,
-    reactjs,
-    redux,
-    tailwind,
-    nodejs,
-    mongodb,
-    git,
-    figma,
-    docker,
-    meta,
-    starbucks,
-    tesla,
-    shopify,
     carrent,
     jobit,
     tripguide,
-    threejs,
+    maxgen,
+    silvertouch,
+    ddrops,
+    indus,
+    cplusplus,
+    cshap,
+    python,
+    java,
+    javascript,
+    tensorflow,
+    pandas,
+    keras,
+    pytorch,
+    scikitlearn,
+    aws,
+    gcp,
+    azure,
+    docker,
+    kubernates,
+    nodejs,
+    reactjs,
+    express,
+    django,
+    git,
+    jira,
+    mongodb,
+    mysql,
+    dynamodb,
+    firebase
 } from "../assets";
 
 export const navLinks = [
@@ -63,113 +75,199 @@ const services = [
     // }
 ];
 
-const technologies = [
+// constants.js
+
+export const certificates = [
     {
-        name: "HTML 5",
-        icon: html,
+        title: "Blockchain Developer",
+        issuedBy: "Silver Touch Pvt. Ltd",
+        date: "2019",
+        link: "https://drive.google.com/file/d/1BGAA7rS8X90XtyAGWPLZHhVqN_Mlkqrf/view", // Optional
     },
     {
-        name: "CSS 3",
-        icon: css,
+        title: "Python Beginner and Advanced",
+        issuedBy: "Udemy",
+        date: "2019",
+        link: "https://drive.google.com/file/d/1B9lABWYyIHqQBNMGujMhW2NL10-BkCIX/view", // Optional
+    },
+    {
+        title: "Python with Machine Learning",
+        issuedBy: "MaxGen Technologies Pvt. Ltd",
+        date: "2020",
+        link: "https://drive.google.com/file/d/18lkHROAMMgLAbHbotNkOkbe5EJsPFfET/view", // Optional
+    },
+    {
+        title: "B.Tech Degree",
+        issuedBy: "Indus University",
+        date: "2020",
+        link: "https://drive.google.com/file/d/16T7AUyJ8WkjUxYvPsfN1hhp2M2-GBrel/view", // Optional
+    },
+    {
+        title: "Post-Graduation Degree",
+        issuedBy: "Centennial College",
+        date: "2023",
+        link: "https://drive.google.com/file/d/16H29sc4Aq_0kjtWIwPcFaaOX5ET_BwBC/view", // Optional
+    },
+];
+
+const technologies = [
+    {
+        name: "C++",
+        icon: cplusplus,
+    },
+    {
+        name: "C#",
+        icon: cshap,
+    },
+    {
+        name: "Python",
+        icon: python
+    },
+    {
+        name: "Java",
+        icon: java
     },
     {
         name: "JavaScript",
         icon: javascript,
     },
     {
-        name: "TypeScript",
-        icon: typescript,
+        name: "TensorFlow",
+        icon: tensorflow,
     },
     {
-        name: "React JS",
-        icon: reactjs,
+        name: "Pandas",
+        icon: pandas,
     },
     {
-        name: "Redux Toolkit",
-        icon: redux,
+        name: "Keras",
+        icon: keras,
     },
     {
-        name: "Tailwind CSS",
-        icon: tailwind,
+        name: "PyTorch",
+        icon: pytorch,
     },
     {
-        name: "Node JS",
-        icon: nodejs,
+        name: "Scikit-Learn",
+        icon: scikitlearn,
     },
     {
-        name: "MongoDB",
-        icon: mongodb,
+        name: "AWS",
+        icon: aws,
     },
     {
-        name: "Three JS",
-        icon: threejs,
+        name: "GCP",
+        icon: gcp,
     },
     {
-        name: "git",
-        icon: git,
+        name: "Azure",
+        icon: azure,
     },
     {
-        name: "figma",
-        icon: figma,
-    },
-    {
-        name: "docker",
+        name: "Docker",
         icon: docker,
+    },
+    {
+        name: "Kubernetes",
+        icon: kubernates,
     },
 ];
 
+
+// const technologies = [
+
+//    
+//    
+//     
+//     
+//    
+//    
+//     {
+//         name: "React.js",
+//         icon: reactjs,
+//     },
+// {
+//         name: "Node.js",
+//         icon: reactjs,
+//     },
+//    
+//     {
+//         name: "Express",
+//         icon: express,
+//     },
+//     {
+//         name: "Django",
+//         icon: django,
+//     },
+//     {
+//         name: "GIT",
+//         icon: git,
+//     },
+//     {
+//         name: "JIRA",
+//         icon: jira,
+//     },
+//     {
+//         name: "MongoDB",
+//         icon: mongodb,
+//     },
+//     {
+//         name: "MySQL",
+//         icon: mysql,
+//     },
+//     {
+//         name: "DynamoDB",
+//         icon: dynamodb,
+//     },
+//     {
+//         name: "Firebase",
+//         icon: firebase,
+//     },
+// ];
+
 const experiences = [
     {
-        title: "React.js Developer",
-        company_name: "Starbucks",
-        icon: starbucks,
+        title: "Quality Documentation Administrator and Programmer",
+        company_name: "Ddrops Company",
+        icon: ddrops,
         iconBg: "#383E56",
-        date: "March 2020 - April 2021",
+        date: "June 2023 - Present",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
-        ],
+            "Ancova Analysis using Python and ML concepts for covariance analysis",
+            "Azure Database Management and Administration across organization",
+            "Application and Software Development with GMP standards"],
     },
     {
-        title: "React Native Developer",
-        company_name: "Tesla",
-        icon: tesla,
+        title: "Software Data Engineer",
+        company_name: "MaxGen Technologies",
+        icon: maxgen,
         iconBg: "#E6DEDD",
-        date: "Jan 2021 - Feb 2022",
+        date: "Jan 2020 - March 2022",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
-        ],
+            "Worked with AI and Model Training using Python",
+            "Developed face recognition attendance system using OpenCV",
+            "ETL data processing and visualization with PowerBI"],
     },
     {
-        title: "Web Developer",
-        company_name: "Shopify",
-        icon: shopify,
+        title: "Blockchain Developer Intern",
+        company_name: "Silver Touch Pvt. Ltd",
+        icon: silvertouch,
         iconBg: "#383E56",
-        date: "Jan 2022 - Jan 2023",
+        date: "June 2019 - Dec 2019",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
-        ],
+            "Learned Ethereum architecture and Solidity language",
+            "Developed smart contract for voting system",
+            "Created frontend with React.js and Web3.js integration"],
     },
     {
-        title: "Full stack Developer",
-        company_name: "Meta",
-        icon: meta,
+        title: "Student Volunteer",
+        company_name: "Indus University",
+        icon: indus,
         iconBg: "#E6DEDD",
-        date: "Jan 2023 - Present",
-        points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
-        ],
+        date: "2016 - 2020",
+        points: ["Served as an examination invigilator, maintaining academic integrity during university exams",
+            "Organized and led student activities and events to foster community engagement",
+            "Coordinated with faculty and students to facilitate smooth conduct of academic activities"],
     },
 ];
 
