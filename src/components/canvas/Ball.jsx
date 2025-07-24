@@ -25,9 +25,26 @@ const Ball = (props) => {
           polygonOffsetFactor={-5}
           flatShading
         />
+        {/* Front */}
         <Decal
           position={[0, 0, 1]}
-          rotation={[2 * Math.PI, 0, 6.25]}
+          rotation={[0, 0, 0]}
+          scale={1}
+          map={decal}
+          flatShading
+        />
+        {/* Back */}
+        <Decal
+          position={[0, 0, -1]}
+          rotation={[Math.PI, 0, 0]}
+          scale={1}
+          map={decal}
+          flatShading
+        />
+        {/* Top */}
+        <Decal
+          position={[0, 1, 0]}
+          rotation={[-Math.PI / 2, 0, 0]}
           scale={1}
           map={decal}
           flatShading
@@ -40,7 +57,7 @@ const Ball = (props) => {
 const BallCanvas = ({ icon }) => {
   return (
     <Canvas
-      frameloop="demand"
+      frameloop="always"
       dpr={[1, 2]}
       gl={{ preserveDrawingBuffer: true }}
     >
