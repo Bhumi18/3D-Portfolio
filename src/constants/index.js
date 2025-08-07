@@ -330,7 +330,7 @@ const projects = [
             }
         ],
         // image: carrent,
-        // source_code_link: "https://github.com/",
+        source_code_link: "https://github.com/",
     },
     {
         name: "Pharmaceutical Testing Predictor",
@@ -363,7 +363,7 @@ const projects = [
             }
         ],
         // image: jobit,
-        // source_code_link: "https://github.com/",
+        source_code_link: "https://github.com/",
     },
     {
         name: "Self Expense Dashboard",
@@ -392,7 +392,7 @@ const projects = [
             }
         ],
         // image: tripguide,
-        // source_code_link: "https://github.com/",
+        source_code_link: "https://github.com/",
     },
     {
         name: "Review Summarizer",
@@ -417,7 +417,7 @@ const projects = [
             }
         ],
         // image: tripguide,
-        // source_code_link: "https://github.com/",
+        source_code_link: "https://github.com/",
     },
     {
         name: "Lunar Lander",
@@ -442,7 +442,7 @@ const projects = [
             }
         ],
         // image: tripguide,
-        // source_code_link: "https://github.com/",
+        source_code_link: "https://github.com/pratik2542/Lunar-Lander.git",
     },
     {
         name: "Smart Irrigation",
@@ -467,7 +467,7 @@ const projects = [
             }
         ],
         // image: tripguide,
-        // source_code_link: "https://github.com/",
+        source_code_link: "https://github.com/",
     },
     {
         name: "Diabetes Prediction Model",
@@ -492,7 +492,7 @@ const projects = [
             }
         ],
         // image: tripguide,
-        // source_code_link: "https://github.com/",
+        source_code_link: "https://github.com/",
     },
     {
         name: "Sentiment Analysis on Amazon Fashion Reviews",
@@ -525,7 +525,7 @@ const projects = [
             }
         ],
         // image: tripguide,
-        // source_code_link: "https://github.com/",
+        source_code_link: "https://github.com/pratik2542/NLP.git",
     },
     {
         name: "Dimensionality Reduction using PCA",
@@ -554,7 +554,7 @@ const projects = [
             }
         ],
         // image: tripguide,
-        // source_code_link: "https://github.com/",
+        source_code_link: "https://github.com/pratik2542/PCA-Dimensity-Reduction-.git",
     },
 ];
 
