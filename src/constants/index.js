@@ -300,67 +300,261 @@ const testimonials = [
 
 const projects = [
     {
-        name: "Car Rent",
+        name: "Employee Training Management System",
         description:
-            "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+            "Developed a comprehensive PowerApps Canvas Application for pharmaceutical company training management, featuring Azure SQL integration for database management and compliance tracking. Implemented automated workflows for training notifications and integrated SharePoint for secure document handling and digital signatures.",
         tags: [
             {
-                name: "react",
+                name: "PowerApps",
                 color: "blue-text-gradient",
             },
             {
-                name: "mongodb",
+                name: "Power Automate",
                 color: "green-text-gradient",
             },
             {
-                name: "tailwind",
+                name: "Azure SQL",
                 color: "pink-text-gradient",
             },
+            {
+                name: "SharePoint",
+                color: "orange-text-gradient",
+            },
+            {
+                name: "GMP Compliance",
+                color: "blue-text-gradient",
+            },
+            {
+                name: "Automation",
+                color: "green-text-gradient",
+            }
         ],
-        image: carrent,
-        source_code_link: "https://github.com/",
+        // image: carrent,
+        // source_code_link: "https://github.com/",
     },
     {
-        name: "Job IT",
+        name: "Pharmaceutical Testing Predictor",
         description:
-            "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+            "Created a machine learning model using ANCOVA to predict testing outcomes from historical data. Developed visualization tools for monitoring testing criteria limits and implemented a threshold breach detection system to optimize testing workflows through data-driven decisions.",
         tags: [
             {
-                name: "react",
+                name: "Python",
                 color: "blue-text-gradient",
             },
             {
-                name: "restapi",
+                name: "Machine Learning",
                 color: "green-text-gradient",
             },
             {
-                name: "scss",
+                name: "Pandas",
                 color: "pink-text-gradient",
             },
+            {
+                name: "Matplotlib",
+                color: "orange-text-gradient",
+            },
+            {
+                name: "Visualization",
+                color: "blue-text-gradient",
+            },
+            {
+                name: "Predictive Modeling",
+                color: "green-text-gradient",
+            }
         ],
-        image: jobit,
-        source_code_link: "https://github.com/",
+        // image: jobit,
+        // source_code_link: "https://github.com/",
     },
     {
-        name: "Trip Guide",
+        name: "Self Expense Dashboard",
         description:
-            "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+            "Designed and developed an interactive Power BI dashboard to analyze and track personal expenses for the year 2022. Visualized monthly spending trends, categorized expenses, and identified patterns for better financial management. Utilized advanced DAX functions and data modeling to create actionable insights, enabling effective budgeting and expense optimization.",
         tags: [
             {
-                name: "nextjs",
+                name: "Power BI",
                 color: "blue-text-gradient",
             },
             {
-                name: "supabase",
+                name: "Data Visualization",
                 color: "green-text-gradient",
             },
             {
-                name: "css",
+                name: "DAX",
                 color: "pink-text-gradient",
             },
+            {
+                name: "Data Modeling",
+                color: "orange-text-gradient",
+            },
+            {
+                name: "Financial Analysis",
+                color: "blue-text-gradient",
+            }
         ],
-        image: tripguide,
-        source_code_link: "https://github.com/",
+        // image: tripguide,
+        // source_code_link: "https://github.com/",
+    },
+    {
+        name: "Review Summarizer",
+        description:
+            "Built an automated review summarization system using Lexical Analysis for e-commerce products. Incorporated sentiment analysis to effectively categorize and understand customer feedback patterns.",
+        tags: [
+            {
+                name: "Python",
+                color: "blue-text-gradient",
+            },
+            {
+                name: "NLP",
+                color: "green-text-gradient",
+            },
+            {
+                name: "Machine Learning",
+                color: "pink-text-gradient",
+            },
+            {
+                name: "Sentiment Analysis",
+                color: "orange-text-gradient",
+            }
+        ],
+        // image: tripguide,
+        // source_code_link: "https://github.com/",
+    },
+    {
+        name: "Lunar Lander",
+        description:
+            "Created an AI-powered Lunar Lander using Deep Q-Learning Network and TensorFlow Agents framework. Enhanced learning capabilities through experience replay implementation for improved performance.",
+        tags: [
+            {
+                name: "Python",
+                color: "blue-text-gradient",
+            },
+            {
+                name: "TensorFlow",
+                color: "green-text-gradient",
+            },
+            {
+                name: "Deep Learning",
+                color: "pink-text-gradient",
+            },
+            {
+                name: "OpenAI Gym",
+                color: "orange-text-gradient",
+            }
+        ],
+        // image: tripguide,
+        // source_code_link: "https://github.com/",
+    },
+    {
+        name: "Smart Irrigation",
+        description:
+            "Developed an IoT-based irrigation system featuring automated soil moisture sensing capabilities. Created a real-time monitoring dashboard with integrated hardware systems for efficient water management.",
+        tags: [
+            {
+                name: "IoT",
+                color: "blue-text-gradient",
+            },
+            {
+                name: "Python",
+                color: "green-text-gradient",
+            },
+            {
+                name: "Hardware Integration",
+                color: "pink-text-gradient",
+            },
+            {
+                name: "Real-time Monitoring",
+                color: "orange-text-gradient",
+            }
+        ],
+        // image: tripguide,
+        // source_code_link: "https://github.com/",
+    },
+    {
+        name: "Diabetes Prediction Model",
+        description:
+            "Engineered a voting-based ensemble classifier for diabetes prediction using the Pima Indians dataset. Implemented advanced model optimization techniques and created a robust data preprocessing pipeline.",
+        tags: [
+            {
+                name: "Python",
+                color: "blue-text-gradient",
+            },
+            {
+                name: "Scikit-Learn",
+                color: "green-text-gradient",
+            },
+            {
+                name: "Machine Learning",
+                color: "pink-text-gradient",
+            },
+            {
+                name: "Data Preprocessing",
+                color: "orange-text-gradient",
+            }
+        ],
+        // image: tripguide,
+        // source_code_link: "https://github.com/",
+    },
+    {
+        name: "Sentiment Analysis on Amazon Fashion Reviews",
+        description:
+            "Developed a comprehensive NLP pipeline for customer review classification using Word2Vec embeddings. Created an efficient text preprocessing workflow and evaluated performance using various metrics.",
+        tags: [
+            {
+                name: "Python",
+                color: "blue-text-gradient",
+            },
+            {
+                name: "NLP",
+                color: "green-text-gradient",
+            },
+            {
+                name: "Word2Vec",
+                color: "pink-text-gradient",
+            },
+            {
+                name: "Sentiment Analysis",
+                color: "orange-text-gradient",
+            },
+            {
+                name: "Scikit-Learn",
+                color: "blue-text-gradient",
+            },
+            {
+                name: "Confusion Matrix",
+                color: "green-text-gradient",
+            }
+        ],
+        // image: tripguide,
+        // source_code_link: "https://github.com/",
+    },
+    {
+        name: "Dimensionality Reduction using PCA",
+        description:
+            "Implemented Principal Component Analysis for efficient high-dimensional dataset reduction while optimizing variance retention. Created visualizations to demonstrate the effectiveness of dimensionality reduction in ML tasks.",
+        tags: [
+            {
+                name: "Python",
+                color: "blue-text-gradient",
+            },
+            {
+                name: "Pandas",
+                color: "green-text-gradient",
+            },
+            {
+                name: "Scikit-Learn",
+                color: "pink-text-gradient",
+            },
+            {
+                name: "Dimensionality Reduction",
+                color: "orange-text-gradient",
+            },
+            {
+                name: "Data Visualization",
+                color: "blue-text-gradient",
+            }
+        ],
+        // image: tripguide,
+        // source_code_link: "https://github.com/",
     },
 ];
 
