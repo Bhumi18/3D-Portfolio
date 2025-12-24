@@ -55,11 +55,15 @@ const ComputersCanvas = () => {
 
   return (
     <Canvas
-      frameloop="demand"
+      frameloop="always"
       shadows
       dpr={[1, 2]}
       camera={{ position: [20, 3, 5], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true }}
+      gl={{
+        preserveDrawingBuffer: true,
+        powerPreference: "high-performance",
+        antialias: false,
+      }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
@@ -76,3 +80,6 @@ const ComputersCanvas = () => {
 };
 
 export default ComputersCanvas;
+
+// Preload the model
+useGLTF.preload("./desktop_pc/scene.gltf");
