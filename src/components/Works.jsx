@@ -17,16 +17,19 @@ const ProjectCard = ({
   source_code_link,
 }) => {
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <motion.div 
+      variants={fadeIn("up", "spring", index * 0.5, 0.75)}
+      className="flex-shrink-0"
+    >
       <Tilt
         options={{
           max: 45,
           scale: 1,
           speed: 450,
         }}
-        className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full'
+        className='bg-tertiary p-5 rounded-2xl w-[280px] sm:w-[360px]'
       >
-        <div className='relative w-full h-[230px]'>
+        <div className='relative w-full h-[160px] sm:h-[230px] flex-shrink-0'>
           <img
             src={image}
             alt='project_image'
@@ -47,16 +50,16 @@ const ProjectCard = ({
           </div>
         </div>
 
-        <div className='mt-5'>
-          <h3 className='text-white font-bold text-[24px]'>{name}</h3>
-          <p className='mt-2 text-secondary text-[14px]'>{description}</p>
+        <div className='mt-4'>
+          <h3 className='text-white font-bold text-[18px] sm:text-[24px]'>{name}</h3>
+          <p className='mt-2 text-secondary text-[12px] sm:text-[14px]'>{description}</p>
         </div>
 
-        <div className='mt-4 flex flex-wrap gap-2'>
+        <div className='mt-3 flex flex-wrap gap-2'>
           {tags.map((tag) => (
             <p
               key={`${name}-${tag.name}`}
-              className={`text-[14px] ${tag.color}`}
+              className={`text-[12px] sm:text-[14px] ${tag.color}`}
             >
               #{tag.name}
             </p>
@@ -88,7 +91,7 @@ const Works = () => {
         </motion.p>
       </div>
 
-      <div className='mt-20 flex flex-wrap gap-7'>
+      <div className='mt-20 flex gap-7 overflow-x-auto pb-4 sm:flex-wrap sm:overflow-x-visible scrollbar-hide'>
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
