@@ -1,143 +1,148 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 import { SectionWrapper } from "../hoc";
 import { technologies } from "../constants";
-import { textVariant } from "../utils/motion";
+import { textVariant, fadeIn } from "../utils/motion";
 import { styles } from "../styles";
 
-const TechBall = ({ icon, name, index }) => {
+// Categorize technologies
+const skillCategories = [
+  {
+    title: "Programming Languages",
+    skills: ["C++", "C#", "Python", "Java", "JavaScript"],
+  },
+  {
+    title: "AI & Machine Learning",
+    skills: ["TensorFlow", "Pandas", "Keras", "PyTorch", "Scikit-Learn"],
+  },
+  {
+    title: "Cloud & DevOps",
+    skills: ["AWS", "GCP", "Azure", "Docker", "Kubernetes"],
+  },
+];
+
+const SkillCard = ({ skill, index, categoryIndex }) => {
+  const [isHovered, setIsHovered] = useState(false);
+  
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0 }}
-      whileInView={{ opacity: 1, scale: 1 }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
       transition={{ 
-        type: "spring",
-        stiffness: 260,
-        damping: 20,
-        delay: index * 0.05 
+        duration: 0.5, 
+        delay: categoryIndex * 0.1 + index * 0.05 
       }}
       viewport={{ once: true }}
-      className="group relative flex flex-col items-center"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="relative group"
     >
-      {/* 3D Ball Container */}
       <div 
-        className="relative w-20 h-20 cursor-pointer"
-        style={{ perspective: "500px" }}
+        className={`
+          flex items-center gap-3 p-3 rounded-xl
+          bg-tertiary/50 backdrop-blur-sm
+          border border-transparent
+          hover:border-[#915EFF]/50
+          hover:bg-[#915EFF]/10
+          transition-all duration-300 cursor-pointer
+          ${isHovered ? 'shadow-lg shadow-[#915EFF]/20' : ''}
+        `}
       >
-        {/* Floating animation wrapper */}
-        <motion.div
-          animate={{ 
-            y: [0, -8, 0],
-            rotateX: [0, 5, 0],
-            rotateY: [0, 10, 0],
-          }}
-          transition={{
-            duration: 3 + (index % 3) * 0.5,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          whileHover={{ 
-            scale: 1.2,
-            rotateY: 360,
-            transition: { duration: 0.6 }
-          }}
-          className="relative w-full h-full"
-          style={{ transformStyle: "preserve-3d" }}
-        >
-          {/* Main Sphere */}
-          <div 
-            className="absolute inset-0 rounded-full"
-            style={{
-              background: `
-                radial-gradient(circle at 30% 30%, 
-                  rgba(255,255,255,0.4) 0%, 
-                  rgba(145, 94, 255, 0.1) 20%,
-                  rgba(30, 30, 60, 0.8) 60%, 
-                  rgba(10, 10, 25, 1) 100%)
-              `,
-              boxShadow: `
-                inset -4px -4px 15px rgba(0,0,0,0.8),
-                inset 4px 4px 15px rgba(255,255,255,0.15),
-                0 8px 25px rgba(0,0,0,0.6),
-                0 0 15px rgba(145, 94, 255, 0.3),
-                0 0 30px rgba(145, 94, 255, 0.1)
-              `,
-              border: "1px solid rgba(145, 94, 255, 0.2)",
-            }}
+        {/* Icon */}
+        <div className="relative w-12 h-12 flex-shrink-0">
+          <motion.div
+            animate={isHovered ? { 
+              rotate: [0, -10, 10, 0],
+              scale: 1.1 
+            } : {}}
+            transition={{ duration: 0.4 }}
+            className="w-full h-full rounded-lg bg-gradient-to-br from-[#915EFF]/20 to-transparent p-2 flex items-center justify-center"
           >
-            {/* Highlight reflection */}
-            <div 
-              className="absolute top-1 left-2 w-6 h-4 rounded-full opacity-60"
-              style={{
-                background: "linear-gradient(180deg, rgba(255,255,255,0.6) 0%, transparent 100%)",
-                filter: "blur(2px)",
-              }}
-            />
-            
-            {/* Secondary reflection */}
-            <div 
-              className="absolute bottom-3 right-2 w-3 h-2 rounded-full opacity-30"
-              style={{
-                background: "rgba(145, 94, 255, 0.8)",
-                filter: "blur(3px)",
-              }}
-            />
-          </div>
-
-          {/* Icon container */}
-          <div className="absolute inset-0 flex items-center justify-center">
             <img
-              src={icon}
-              alt={name}
-              className="w-10 h-10 object-contain drop-shadow-lg group-hover:brightness-125 transition-all duration-300"
-              style={{
-                filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.5))",
-              }}
+              src={skill.icon}
+              alt={skill.name}
+              className="w-8 h-8 object-contain"
             />
-          </div>
-
-          {/* Glow ring on hover */}
-          <div 
-            className="absolute inset-[-4px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          </motion.div>
+          
+          {/* Glow effect */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: isHovered ? 1 : 0 }}
+            className="absolute inset-0 rounded-lg"
             style={{
-              background: "transparent",
-              boxShadow: `
-                0 0 20px rgba(145, 94, 255, 0.6),
-                0 0 40px rgba(145, 94, 255, 0.4),
-                0 0 60px rgba(145, 94, 255, 0.2)
-              `,
+              background: "radial-gradient(circle, rgba(145, 94, 255, 0.3) 0%, transparent 70%)",
+              filter: "blur(8px)",
             }}
           />
-        </motion.div>
+        </div>
 
-        {/* Shadow beneath ball */}
+        {/* Name */}
+        <span className="text-white text-[14px] font-medium group-hover:text-[#915EFF] transition-colors duration-300">
+          {skill.name}
+        </span>
+
+        {/* Animated arrow */}
         <motion.div
+          initial={{ opacity: 0, x: -10 }}
           animate={{ 
-            scale: [1, 0.9, 1],
-            opacity: [0.3, 0.2, 0.3],
+            opacity: isHovered ? 1 : 0, 
+            x: isHovered ? 0 : -10 
           }}
-          transition={{
-            duration: 3 + (index % 3) * 0.5,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-12 h-3 rounded-full"
-          style={{
-            background: "radial-gradient(ellipse, rgba(0,0,0,0.4) 0%, transparent 70%)",
-          }}
-        />
+          className="ml-auto text-[#915EFF]"
+        >
+          →
+        </motion.div>
       </div>
+    </motion.div>
+  );
+};
 
-      {/* Tech name label */}
-      <motion.span 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: index * 0.05 + 0.3 }}
-        className="mt-4 text-secondary text-[12px] font-medium tracking-wider opacity-70 group-hover:opacity-100 group-hover:text-white transition-all duration-300"
-      >
-        {name}
-      </motion.span>
+const CategorySection = ({ category, index, technologies }) => {
+  const categorySkills = technologies.filter(tech => 
+    category.skills.includes(tech.name)
+  );
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6, delay: index * 0.2 }}
+      viewport={{ once: true }}
+      className="relative"
+    >
+      {/* Category Card */}
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-tertiary to-primary p-[1px]">
+        <div className="relative bg-primary rounded-2xl p-6">
+          {/* Decorative gradient */}
+          <div 
+            className="absolute top-0 right-0 w-32 h-32 opacity-20"
+            style={{
+              background: "radial-gradient(circle, #915EFF 0%, transparent 70%)",
+            }}
+          />
+          
+          {/* Category Header */}
+          <div className="flex items-center gap-3 mb-5">
+            <div className="w-1 h-8 bg-gradient-to-b from-[#915EFF] to-[#915EFF]/30 rounded-full" />
+            <h3 className="text-white text-[20px] font-bold">{category.title}</h3>
+            <div className="flex-1 h-[1px] bg-gradient-to-r from-[#915EFF]/30 to-transparent ml-2" />
+          </div>
+
+          {/* Skills Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {categorySkills.map((skill, skillIndex) => (
+              <SkillCard 
+                key={skill.name} 
+                skill={skill} 
+                index={skillIndex}
+                categoryIndex={index}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
     </motion.div>
   );
 };
@@ -150,15 +155,45 @@ const Tech = () => {
         <h2 className={styles.sectionHeadText}>Skills.</h2>
       </motion.div>
 
-      <div className="mt-14 flex flex-row flex-wrap justify-center gap-8">
-        {technologies.map((technology, index) => (
-          <TechBall
-            key={technology.name}
-            icon={technology.icon}
-            name={technology.name}
+      <motion.p
+        variants={fadeIn("", "", 0.1, 1)}
+        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
+      >
+        Here are the technologies and tools I've mastered throughout my journey as a developer, 
+        organized by expertise areas.
+      </motion.p>
+
+      {/* Skills Grid */}
+      <div className="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {skillCategories.map((category, index) => (
+          <CategorySection 
+            key={category.title} 
+            category={category} 
             index={index}
+            technologies={technologies}
           />
         ))}
+      </div>
+
+      {/* Floating decoration */}
+      <div className="relative mt-16 flex justify-center">
+        <motion.div
+          animate={{ 
+            y: [0, -10, 0],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="flex items-center gap-4 px-6 py-3 rounded-full bg-tertiary/30 border border-[#915EFF]/20"
+        >
+          <div className="w-2 h-2 rounded-full bg-[#915EFF] animate-pulse" />
+          <span className="text-secondary text-[14px]">
+            Always learning & adapting to new technologies
+          </span>
+          <div className="w-2 h-2 rounded-full bg-[#915EFF] animate-pulse" />
+        </motion.div>
       </div>
     </>
   );
